@@ -5,26 +5,36 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
+html,
 body{
-  background:#e5e5e5;
-  min-height:100vh;
+  width:100%;
+  height:100%;
+  overflow:hidden; /* SCROLL LOCK */
+}
+
+body{
+  background:#dcdcdc;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:30px;
 }
 
 /* CARD */
 
 .card{
-  width:1200px;
-  max-width:100%;
-  min-height:650px;
+  width:min(92vw, 1400px);
+
+  /* keeps same proportions everywhere */
+  aspect-ratio:16/9;
+
   background:white;
-  border-radius:30px;
+  border-radius:2vw;
+
   overflow:hidden;
+
   display:flex;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+
+  box-shadow:0 1vw 3vw rgba(0,0,0,0.2);
 }
 
 /* LEFT SIDE */
@@ -32,46 +42,66 @@ body{
 .left-side{
   width:42%;
   background:#072f78;
+
   color:white;
-  padding:50px 40px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+
   text-align:center;
+
+  padding:3vw;
+
   position:relative;
 }
 
 .left-side::before{
   content:"";
+
   position:absolute;
-  width:300px;
-  height:300px;
+
+  width:18vw;
+  height:18vw;
+
   background:rgba(255,255,255,0.05);
+
   border-radius:50%;
-  top:-80px;
-  left:-100px;
+
+  top:-5vw;
+  left:-6vw;
 }
+
+/* LOGO */
 
 .logo{
-  width:280px;
+  width:65%;
   max-width:100%;
+
   background:white;
-  padding:15px;
-  border-radius:25px;
-  margin-bottom:35px;
+
+  padding:1vw;
+
+  border-radius:1.5vw;
+
+  margin-bottom:2vw;
 }
 
+/* COMPANY */
+
 .company-name{
-  font-size:58px;
+  font-size:3vw;
   line-height:1.05;
   font-weight:700;
-  margin-bottom:20px;
+
+  margin-bottom:1vw;
 }
 
 .tagline{
-  font-size:26px;
+  font-size:1.3vw;
   color:#dbeafe;
+
   line-height:1.4;
 }
 
@@ -79,51 +109,68 @@ body{
 
 .right-side{
   width:58%;
-  padding:60px;
+
+  position:relative;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
-  position:relative;
+
+  padding:3vw;
 }
+
+/* BADGE */
 
 .badge{
   position:absolute;
-  top:25px;
-  right:25px;
+
+  top:1.5vw;
+  right:1.5vw;
+
   background:#f0b100;
   color:#111827;
-  padding:10px 18px;
-  border-radius:25px;
-  font-size:14px;
+
+  padding:.6vw 1vw;
+
+  border-radius:2vw;
+
+  font-size:.8vw;
   font-weight:bold;
 }
 
+/* TITLE */
+
 .title{
-  font-size:54px;
+  font-size:2.8vw;
   color:#072f78;
-  margin-bottom:40px;
+
+  margin-bottom:2vw;
+
   line-height:1.1;
 }
 
 /* INFO */
 
-.info{
-  margin-bottom:35px;
-}
-
 .info p{
-  margin-bottom:30px;
-  font-size:28px;
+  margin-bottom:1.5vw;
+
+  font-size:1.5vw;
+
   color:#374151;
-  line-height:1.5;
+
+  line-height:1.4;
 }
 
 .info span{
   display:block;
+
   color:#072f78;
+
   font-weight:bold;
-  font-size:32px;
-  margin-bottom:8px;
+
+  font-size:1.7vw;
+
+  margin-bottom:.3vw;
 }
 
 /* QR */
@@ -131,51 +178,70 @@ body{
 .qr-section{
   display:flex;
   align-items:center;
-  gap:25px;
-  margin-top:10px;
+
+  gap:1.5vw;
+
+  margin-top:1vw;
 }
 
 .qr-code{
-  width:140px;
-  height:140px;
-  border:5px solid #072f78;
-  border-radius:15px;
+  width:8vw;
+  height:8vw;
+
+  border:.3vw solid #072f78;
+
+  border-radius:.8vw;
+
   background:white;
-  padding:6px;
+
+  padding:.3vw;
 }
 
 .qr-text{
-  font-size:30px;
+  font-size:1.6vw;
+
   font-weight:bold;
+
   color:#374151;
 }
 
-/* BUTTON */
+/* PRINT BUTTON */
 
 .print-btn{
-  margin-top:35px;
-  padding:18px 25px;
+  margin-top:2vw;
+
+  padding:1vw 1.5vw;
+
   border:none;
-  border-radius:14px;
+
+  border-radius:.8vw;
+
   background:#072f78;
+
   color:white;
-  font-size:22px;
+
+  font-size:1.2vw;
+
   cursor:pointer;
-  transition:0.3s;
+
+  transition:.3s;
 }
 
 .print-btn:hover{
   background:#0b4eb8;
 }
 
-/* BOTTOM LINE */
+/* BOTTOM BAR */
 
 .bottom-line{
   position:absolute;
+
   bottom:0;
   left:0;
+
   width:100%;
-  height:14px;
+  height:.8vw;
+
   background:#f0b100;
 }
 
@@ -185,7 +251,6 @@ body{
 
   body{
     background:white;
-    padding:0;
   }
 
   .print-btn,
@@ -194,45 +259,12 @@ body{
   }
 
   .card{
-    width:100%;
-    box-shadow:none;
+    width:100vw;
+    height:100vh;
+
     border-radius:0;
-  }
 
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-  .card{
-    flex-direction:column;
-  }
-
-  .left-side,
-  .right-side{
-    width:100%;
-  }
-
-  .company-name{
-    font-size:42px;
-  }
-
-  .title{
-    font-size:42px;
-  }
-
-  .info p{
-    font-size:22px;
-  }
-
-  .info span{
-    font-size:26px;
-  }
-
-  .qr-section{
-    flex-direction:column;
-    align-items:flex-start;
+    box-shadow:none;
   }
 
 }
